@@ -208,7 +208,6 @@ public class classO
         var connectionString = "Host=localhost;Database=postgres;Username=postgres;Password=mynotsosecretpassword;Port=5431;";
         var connection = new NpgsqlConnection(connectionString);
 
-        
 
         while (true)
         {
