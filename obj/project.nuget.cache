@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "86kEki/mCpRjdBRwLEEVuTAMvN+TXdjemA8RYUNmGcj7ifBYXrumRfH7v4ItxZY1s8K2zyUGHpfxaWITxkX2fw==",
+  "success": true,
+  "projectFilePath": "C:\\C#\\12PasswordManager\\12PasswordManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\elext\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\elext\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\elext\\.nuget\\packages\\npgsql\\8.0.0-preview.3\\npgsql.8.0.0-preview.3.nupkg.sha512"
+  ],
+  "logs": []
+}
