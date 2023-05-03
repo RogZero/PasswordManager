@@ -2,11 +2,59 @@
 using Npgsql;
 using System.Text;
 
-
 namespace TestingPosgres;
 
 public class classO
 {
+
+// ~~~~~~~~~~~~~~~ MAIN PROGRAM ~~~~~~~~~~~~~~~
+    static void Main(string[] args)
+    
+    {
+        var connectionString = "Host=localhost;Database=postgres;Username=postgres;Password=mynotsosecretpassword;Port=5431;";
+        var connection = new NpgsqlConnection(connectionString);
+
+        while (true)
+        {
+            Console.Write("Check the accounts(1), add a new account(2), create a new pasword(3), delete an account(4), update an account's password(5) or teminate the program(0): ");
+            
+            string? readToInt = Console.ReadLine();
+            int option = StringToInt(readToInt);
+
+            Console.WriteLine();
+
+            switch(option)
+            {
+                case 0:
+                return;
+
+                case 1:
+                writeDatabase(connection);
+                break;
+
+                case 2:            
+                addAccount(connection);
+                break;    
+
+                case 3:
+                createPassword(connection);
+                break;      
+
+                case 4:
+                deleteAccount(connection);
+                break;   
+
+                case 5:
+                updateAccount(connection);
+                break;
+
+            }
+
+        }
+        
+
+    }
+    
     // ~~~~~~~~~~~~~~~ Converts a string to integer ~~~~~~~~~~~~~~~
     static int StringToInt(string? inputString)
     {
@@ -200,56 +248,9 @@ public class classO
         connection.Close();
     }
 
-
-// ~~~~~~~~~~~~~~~ MAIN PROGRAM ~~~~~~~~~~~~~~~
-    static void Main(string[] args)
-    
-    {
-        var connectionString = "Host=localhost;Database=postgres;Username=postgres;Password=mynotsosecretpassword;Port=5431;";
-        var connection = new NpgsqlConnection(connectionString);
-
-
-        while (true)
-        {
-            Console.Write("Check the accounts(1), add a new account(2), create a new pasword(3), delete an account(4), update an account's password(5) or teminate the program(0): ");
-            
-            string? readToInt = Console.ReadLine();
-            int option = StringToInt(readToInt);
-
-            Console.WriteLine();
-
-            switch(option)
-            {
-                case 0:
-                return;
-
-                case 1:
-                writeDatabase(connection);
-                break;
-
-                case 2:            
-                addAccount(connection);
-                break;    
-
-                case 3:
-                createPassword(connection);
-                break;      
-
-                case 4:
-                deleteAccount(connection);
-                break;   
-
-                case 5:
-                updateAccount(connection);
-                break;
-
-            }
-
-        }
-        
-
-    }
 }
+
+
 
 
 public class passwordDesc
